@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="index.css" />
+    <link rel="stylesheet" href="addToCart.css" />
+    <script
+      src="https://kit.fontawesome.com/5e07cb7535.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <div class="container">
+      <div id="vidDis">
+        <img
+          src="https://ng.jumia.is/cms/0-1-christmas-sale/2023/BF-Top-strip-Desktop.gif"
+          alt=""
+        />
+      </div>
+      <nav>
+        <img src="img/Jumia-Logo.png" alt="" />
+        <div class="search-box">
+          <input type="search" placeholder="Search" aria-label="Search" />
+          <button class="btn">Search</button>
+        </div>
+        <div class="icon-box">
+          <div class="icon">
+            <i class="fa-solid icc fa-user"></i>
+            <p>Account</p>
+          </div>
+          <div class="icon">
+            <i class="fa-solid fa-question"></i>
+            <p>help</p>
+          </div>
+          <div class="icon cart" onclick="showCart()">
+            <span id="cart-length"></span>
+            <i class="fa-solid icc fa-cart-shopping"></i>
+            <p>Cart</p>
+          </div>
+        </div>
+      </nav>
+
+      <div class="prod-info-box">
+        
+      </div>
+      
+    </div>
+
+    <script src="addToCart.js"></script>
+  </body>
+</html>
+
+
+

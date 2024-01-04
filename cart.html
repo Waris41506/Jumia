@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cart</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="index.css" />
+    <link rel="stylesheet" href="cart.css" />
+    <script
+      src="https://kit.fontawesome.com/5e07cb7535.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <div class="container">
+      <div id="vidDis">
+        <img
+          src="https://ng.jumia.is/cms/0-1-christmas-sale/2023/BF-Top-strip-Desktop.gif"
+          alt=""
+        />
+      </div>
+      <nav>
+        <img src="img/Jumia-Logo.png" alt="" />
+        <div class="search-box">
+          <input type="search" placeholder="Search" aria-label="Search" />
+          <button class="btn">Search</button>
+        </div>
+        <div class="icon-box">
+          <div class="icon">
+            <i class="fa-solid icc fa-user"></i>
+            <p>Account</p>
+          </div>
+          <div class="icon">
+            <i class="fa-solid fa-question"></i>
+            <p>help</p>
+          </div>
+          <div class="icon cart">
+            <span id="cart-length"></span>
+            <i class="fa-solid icc fa-cart-shopping"></i>
+            <p>Cart</p>
+          </div>
+        </div>
+      </nav>
+
+      <div class="cart-box">
+        <div class="cart-info">
+          <h3 id="cart-length-info"></h3>
+          <hr />
+          <div id="disCart"></div>
+        </div>
+        <div class="cart-subtotal"></div>
+      </div>
+    </div>
+  </body>
+</html>
+
+<script>
+  let disCarts = document.getElementById("disCart");
+  let CartsLength = document.getElementById("cart-length");
+  let cartLengthInfo = document.getElementById("cart-length-info");
+  let eachProdId = localStorage.getItem("jProductsID");
+  let findCart;
+
+  const print = () => {
+    findCart = JSON.parse(localStorage.getItem("newCart")) || [];
+    CartsLength.innerHTML = findCart.length;
+    cartLengthInfo.innerHTML = `<h2>Carts(${findCart.length})</h2>`;
+
+    findCart.length == 0
+      ? (disCarts.innerHTML = `
+      <div class="emptyCart">
+        <h3>Your cart is empty! </h3>
+        <p>Browse our categories and discover our best deals!</p>
+        <button onclick='shop()'>Start Shopping</button>
+    </div>
+      `)
+      : findCart.map((cart) => {
+          disCarts.innerHTML += `
+    <div class="cart-inner-info">
+                <div class="img-box-info">
+                    <img src="${cart.thumbnail}" alt="">
+                    <div>
+                        <p id="title">${cart.description}</p>
+                        <p id="seller">seller : jumia</p>
+                        <p>in stock</p>
+                        <button onclick="removeItem(${cart.id})" id="remove"> <i class="fa-solid fa-trash"></i> Remove</button>
+                    </div>
+                    <div class="price-info">
+                        <h3>#${cart.price}.00</h3>
+                        <div class="btn-box">
+                            <button>-</button>
+                            <button>+</button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+    `;
+        });
+  };
+
+  print();
+
+  const removeItem = (id) => {
+    let removeItems = findCart.filter((itemId) => itemId.id != id);
+    console.log(removeItems);
+    localStorage.setItem("newCart", JSON.stringify(removeItems));
+    disCart.innerHTML = "";
+    print();
+  };
+
+  const shop = () => {
+    window.location.href = 'index.html'
+  }
+</script>

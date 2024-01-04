@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Jumia</title>
+    <link rel="stylesheet" href="index.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://kit.fontawesome.com/5e07cb7535.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <div class="container">
+      <div id="vidDis">
+        <img
+          src="https://ng.jumia.is/cms/0-1-christmas-sale/2023/BF-Top-strip-Desktop.gif"
+          alt=""
+        />
+      </div>
+      <nav>
+        <img src="img/Jumia-Logo.png" alt="" />
+        <div class="search-box">
+          <input type="search" placeholder="Search" aria-label="Search" />
+          <button class="btn">Search</button>
+        </div>
+        <div class="icon-box">
+          <div class="icon">
+            <i class="fa-solid icc fa-user"></i>
+            <p>Account</p>
+          </div>
+          <div class="icon">
+            <i class="fa-solid fa-question"></i>
+            <p>help</p>
+          </div>
+          <div class="icon cart" onclick="showCart()">
+            <span id="cart-length"></span>
+            <i class="fa-solid icc fa-cart-shopping"></i>
+            <p>Cart</p>
+          </div>
+        </div>
+      </nav>
+
+      <header>
+        <div class="left">
+          <div class="left-info" onclick="skincare('skincare')" >
+            <i class="fa-solid fa-apple-whole"></i>
+            <p>Supermarket </p>
+          </div>
+          <div class="left-info" onclick="groceries('groceries')">
+            <i class="fa-solid fa-notes-medical"></i>
+            <p>Health & Beauty </p>
+          </div>
+          <div class="left-info" onclick="decoration('home-decoration')">
+            <i class="fa-solid fa-house"></i>
+            <p>Home & Office </p>
+          </div>
+          <div class="left-info" onclick="fragrances('fragrances')">
+            <i class="fa-solid fa-blender-phone"></i>
+            <p>Appliances</p>
+          </div>
+          <div class="left-info" onclick="tablets('smartphones')">
+            <i class="fa-solid fa-square-phone"></i>
+            <p>Phone & Tablets</p>
+          </div>
+          <div class="left-info" onclick="computing('laptops')">
+            <i class="fa-solid fa-laptop"></i>
+            <p>Computing</p>
+          </div>
+          <div class="left-info">
+            <i class="fa-solid fa-shirt"></i>
+            <p>Fashion</p>
+          </div>
+          <div class="left-info">
+            <i class="fa-solid fa-gamepad"></i>
+            <p>Gaming</p>
+          </div>
+        </div>
+        <div class="middle">
+          <div
+            id="carouselExampleInterval"
+            class="carousel slide"
+            data-bs-ride="carousel"
+          >
+            <div class="carousel-inner">
+              <div class="carousel-item active" data-bs-interval="10000">
+                <img
+                  src="img/jumia-img1.jpg"
+                  id="cor-img"
+                  class="d-block w-100"
+                  alt="..."
+                />
+              </div>
+              <div class="carousel-item" data-bs-interval="2000">
+                <img
+                  src="img/jumia-img2.jpg"
+                  id="cor-img"
+                  class="d-block w-100"
+                  alt="..."
+                />
+              </div>
+              <div class="carousel-item" data-bs-interval="3000">
+                <img
+                  src="img/jumia-img3.png"
+                  id="cor-img"
+                  class="d-block w-100"
+                  alt="..."
+                />
+              </div>
+              <div class="carousel-item">
+                <img
+                  src="img/jumia-img4.png"
+                  id="cor-img"
+                  class="d-block w-100"
+                  alt="..."
+                />
+              </div>
+            </div>
+            <button
+              class="carousel-control-prev"
+              type="button"
+              data-bs-target="#carouselExampleInterval"
+              data-bs-slide="prev"
+            >
+              <span
+                class="carousel-control-prev-icon"
+                aria-hidden="true"
+              ></span>
+              <span class="visually-hidden">Previous</span>
+            </button>
+            <button
+              class="carousel-control-next"
+              type="button"
+              data-bs-target="#carouselExampleInterval"
+              data-bs-slide="next"
+            >
+              <span
+                class="carousel-control-next-icon"
+                aria-hidden="true"
+              ></span>
+              <span class="visually-hidden">Next</span>
+            </button>
+          </div>
+        </div>
+        <div class="right">
+          <div class="right-img">
+            <img
+              src="https://ng.jumia.is/cms/0-1-initiatives/official-stores/2023/Updated-creative/bsb.jpg"
+              alt=""
+            />
+          </div>
+          <div class="right-img">
+            <img
+              src="https://ng.jumia.is/cms/0-1-initiatives/jforce/2023/JForce.png"
+              alt=""
+            />
+          </div>
+        </div>
+      </header>
+
+      <div class="top">
+        <h1>Top selling items</h1>
+      </div>
+      <div class="top-sell"></div>
+
+    </div>
+    <footer>
+      <div class="top-footer"></div>
+      <div class="down-footer"></div>
+    </footer>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+      crossorigin="anonymous"
+    ></script>
+    <script src="index.js"></script>
+  </body>
+</html>
